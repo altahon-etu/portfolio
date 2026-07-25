@@ -1,0 +1,1399 @@
+/* ==========================================================================
+   IMPORT FONTS
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap');
+
+/* ==========================================================================
+   1. RESET & VARIABLES GLOBALES
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --blanc:    #f5f3ef;
+    --marine:   #5b85a8;
+    --marine-m: #6d99bc;
+    --orange:   #cc6633;
+    --orange-c: #b35a2a;
+    --texte:    #444444;
+    --texte-d:  #777777;
+    --bordure:  #e0dbd4;
+    --fond-card:#faf9f6;
+}
+
+/* ── MODE SOMBRE ── */
+[data-theme="dark"] {
+    --blanc:    #111827;
+    --marine:   #00b4b4;          /* cyan profond */
+    --marine-m: #00d0d0;          /* cyan clair hover */
+    --orange:   #e8c542;
+    --orange-c: #d4b030;
+    --texte:    #e8e8e8;
+    --texte-d:  #9aabb8;
+    --bordure:  #2d3748;
+    --fond-card:#1e2a3a;
+}
+
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: var(--blanc);
+    color: var(--texte);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h1, h2, h3 {
+    font-family: 'Lora', Georgia, serif;
+    color: var(--marine);
+    line-height: 1.3;
+}
+
+h2 {
+    font-size: 1.6rem;
+    margin-bottom: 0.4rem;
+}
+
+h3 {
+    font-size: 1.15rem;
+}
+
+p {
+    color: var(--texte-d);
+}
+
+/* ==========================================================================
+   2. HEADER & NAVIGATION
+   ========================================================================== */
+header {
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--marine);
+    padding: 0 2.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 3px solid var(--orange);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    height: 62px;
+}
+
+.logo {
+    color: #ffffff;
+    font-family: 'Lora', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.logo span {
+    color: var(--orange);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 0.2rem;
+}
+
+nav ul li a {
+    color: #e8f2f9;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.4rem 0.85rem;
+    border-radius: 4px;
+    transition: color 0.2s, background 0.2s;
+    display: block;
+}
+
+nav ul li a:hover {
+    color: #fff;
+    background: rgba(255,255,255,0.08);
+}
+
+nav ul li.active a {
+    color: #fff;
+    background: rgba(212, 98, 42, 0.25);
+    border-bottom: 2px solid var(--orange);
+    border-radius: 4px 4px 0 0;
+}
+
+/* ==========================================================================
+   3. MAIN
+   ========================================================================== */
+main {
+    flex: 1;
+    padding: 2.5rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+section {
+    animation: monte 0.4s ease both;
+}
+
+@keyframes monte {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   4. ACCUEIL — HERO
+   ========================================================================== */
+.hero {
+    background-color: var(--marine);
+    color: #fff;
+    padding: 3.5rem 2.5rem;
+    border-radius: 6px;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Trait décoratif discret */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 5px;
+    height: 100%;
+    background: var(--orange);
+}
+
+.hero h1 {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 0.7rem;
+    font-weight: 600;
+}
+
+.sous-titre {
+    color: #ddeef7;
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin-bottom: 1.8rem;
+}
+
+.actions-accueil {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-action {
+    display: inline-block;
+    background-color: var(--orange);
+    color: #fff;
+    padding: 0.6rem 1.3rem;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background-color 0.2s, transform 0.15s;
+    border: 2px solid transparent;
+}
+
+.btn-action:hover {
+    background-color: var(--orange-c);
+    transform: translateY(-1px);
+}
+
+.btn-cv {
+    background-color: transparent;
+    border: 2px solid rgba(255,255,255,0.4);
+    color: #fff;
+}
+
+.btn-cv:hover {
+    border-color: #fff;
+    background-color: rgba(255,255,255,0.08);
+}
+
+.presentation {
+    background: var(--fond-card);
+    padding: 2rem 2.2rem;
+    border-radius: 6px;
+    border: 1px solid var(--bordure);
+}
+
+.presentation h2 {
+    margin-bottom: 0.9rem;
+}
+
+.presentation p {
+    margin-bottom: 0.9rem;
+}
+
+.presentation p:last-of-type {
+    margin-bottom: 1.2rem;
+}
+
+strong {
+    color: var(--marine);
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   5. COMPÉTENCES
+   ========================================================================== */
+#competences > p {
+    margin-bottom: 1.5rem;
+}
+
+.conteneur-competences {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 1.2rem;
+}
+
+.bloc-pole {
+    background: var(--fond-card);
+    padding: 1.5rem;
+    border-radius: 6px;
+    border: 1px solid var(--bordure);
+    border-top: 3px solid var(--orange);
+}
+
+.bloc-pole h3 {
+    color: var(--marine);
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'DM Sans', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.bloc-pole ul {
+    list-style: none;
+    padding: 0;
+}
+
+.bloc-pole li {
+    margin-bottom: 0.6rem;
+    color: var(--texte-d);
+    font-size: 0.92rem;
+    padding-left: 1.1rem;
+    position: relative;
+}
+
+.bloc-pole li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: var(--orange);
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   6. PROJETS
+   ========================================================================== */
+#projets > p {
+    margin-bottom: 1.5rem;
+}
+
+.grille-projets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    justify-content: center;
+}
+
+.grille-projets .carte-projet {
+    flex: 1 1 280px;
+    max-width: calc(33.333% - 0.8rem);
+}
+
+.carte-projet {
+    background: var(--fond-card);
+    padding: 1.5rem;
+    border-radius: 6px;
+    border: 1px solid var(--bordure);
+    border-left: 4px solid var(--marine);
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s, border-left-color 0.2s;
+}
+
+.carte-projet:hover {
+    box-shadow: 0 4px 16px rgba(26, 46, 74, 0.1);
+    border-left-color: var(--orange);
+}
+
+.carte-projet h3 {
+    margin-bottom: 0.6rem;
+    font-size: 1.05rem;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    color: var(--marine);
+}
+
+.carte-projet p {
+    font-size: 0.93rem;
+    flex-grow: 1;
+    margin-bottom: 0;
+}
+
+.technos {
+    margin-top: 1.2rem;
+    list-style: none;
+    display: flex;
+    gap: 0.45rem;
+    flex-wrap: wrap;
+}
+
+.technos li {
+    background: #eef1f5;
+    color: var(--marine);
+    padding: 0.2rem 0.65rem;
+    border-radius: 3px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+
+/* ==========================================================================
+   7. CONTACT
+   ========================================================================== */
+#contact > p {
+    margin-bottom: 0.3rem;
+}
+
+.form-contact {
+    background: var(--fond-card);
+    padding: 2rem 2.2rem;
+    border-radius: 6px;
+    border: 1px solid var(--bordure);
+    margin-top: 1.5rem;
+    max-width: 600px;
+}
+
+.form-groupe {
+    margin-bottom: 1.1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-groupe label {
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--marine);
+}
+
+.form-groupe input,
+.form-groupe textarea {
+    padding: 0.65rem 0.9rem;
+    border: 1.5px solid var(--bordure);
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-family: 'DM Sans', sans-serif;
+    background: var(--blanc);
+    color: var(--texte);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-groupe input:focus,
+.form-groupe textarea:focus {
+    border-color: var(--marine);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(26, 46, 74, 0.1);
+}
+
+.form-groupe textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.btn-envoyer {
+    background-color: var(--marine);
+    color: #fff;
+    padding: 0.65rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-envoyer:hover {
+    background-color: var(--marine-m);
+}
+
+.alerte {
+    padding: 0.9rem 1.1rem;
+    margin: 1.2rem 0;
+    border-radius: 4px;
+    font-size: 0.92rem;
+}
+
+.alerte-erreur {
+    background-color: #fdf0ee;
+    color: #7a2c1e;
+    border-left: 4px solid #c0392b;
+}
+
+.alerte-succes {
+    background-color: #edf7f1;
+    color: #1d5c38;
+    border-left: 4px solid #27ae60;
+}
+
+.alerte ul {
+    margin-left: 1.3rem;
+    margin-top: 0.4rem;
+}
+
+/* ==========================================================================
+   8. FOOTER
+   ========================================================================== */
+footer {
+    background-color: var(--marine);
+    color: #d0e2f0;
+    text-align: center;
+    padding: 1.1rem;
+    font-size: 0.85rem;
+    border-top: 2px solid var(--orange);
+}
+
+/* ==========================================================================
+   10. PAGE ACCUEIL — NOUVEAUX COMPOSANTS
+   ========================================================================== */
+
+/* Hero enrichi */
+.hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.hero-tag {
+    color: #a8bdd1;
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.hero h1 {
+    font-size: 2.4rem;
+    color: #fff;
+    font-family: 'Lora', serif;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* Badge disponibilité */
+.hero-badge {
+    margin-top: 0.5rem;
+}
+
+.badge-dispo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    color: #c8e6c9;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.point-vert {
+    width: 8px;
+    height: 8px;
+    background: #5aaa6a;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 0 3px rgba(90, 170, 106, 0.2);
+    animation: pulse-vert 2s infinite;
+}
+
+@keyframes pulse-vert {
+    0%, 100% { box-shadow: 0 0 0 3px rgba(76,175,80,0.25); }
+    50%       { box-shadow: 0 0 0 6px rgba(76,175,80,0.1); }
+}
+
+/* Grille bio + chiffres */
+.accueil-grille {
+    display: grid;
+    grid-template-columns: 1fr 240px;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+    align-items: start;
+}
+
+.bloc-bio {
+    background: var(--fond-card);
+    padding: 2rem 2.2rem;
+    border-radius: 6px;
+    border: 1px solid var(--bordure);
+}
+
+.bloc-bio h2 {
+    margin-bottom: 1rem;
+}
+
+.bloc-bio p {
+    margin-bottom: 0.85rem;
+    font-size: 0.97rem;
+}
+
+.btn-contact-accueil {
+    margin-top: 0.5rem;
+    background-color: var(--marine);
+}
+
+.btn-contact-accueil:hover {
+    background-color: var(--marine-m);
+}
+
+/* Bloc chiffres clés */
+.bloc-chiffres {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.chiffre-item {
+    background: var(--fond-card);
+    border: 1px solid var(--bordure);
+    border-radius: 6px;
+    padding: 1.1rem 0.8rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.chiffre-nb {
+    font-family: 'Lora', serif;
+    font-size: 1.9rem;
+    font-weight: 600;
+    color: var(--orange);
+    line-height: 1;
+}
+
+.chiffre-label {
+    font-size: 0.78rem;
+    color: var(--texte-d);
+    line-height: 1.4;
+    text-align: center;
+}
+
+/* Bloc stack technique */
+.bloc-stack {
+    background: var(--fond-card);
+    border: 1px solid var(--bordure);
+    border-radius: 6px;
+    padding: 1.8rem 2.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.bloc-stack h2 {
+    margin-bottom: 1.3rem;
+}
+
+.stack-grille {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.stack-cat h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--marine);
+    margin-bottom: 0.7rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid var(--orange);
+    display: inline-block;
+}
+
+.stack-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.stack-tags span {
+    background: #eef1f5;
+    color: var(--marine);
+    padding: 0.25rem 0.65rem;
+    border-radius: 3px;
+    font-size: 0.82rem;
+    font-weight: 500;
+}
+
+/* Bloc CTA final */
+.bloc-cta {
+    background: var(--marine);
+    color: #fff;
+    border-radius: 6px;
+    padding: 2rem 2.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.bloc-cta p {
+    color: #a8bdd1;
+    font-size: 0.97rem;
+    flex: 1;
+    min-width: 200px;
+}
+
+.bloc-cta p strong {
+    color: #fff;
+}
+
+.bloc-cta .actions-accueil {
+    flex-shrink: 0;
+}
+
+/* Responsive nouveaux blocs */
+@media (max-width: 768px) {
+    .accueil-grille {
+        grid-template-columns: 1fr;
+    }
+
+    .bloc-chiffres {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .stack-grille {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .bloc-cta {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .bloc-chiffres {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* ==========================================================================
+   11. NAVIGATION — HIDE ON SCROLL
+   ========================================================================== */
+
+header {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform;
+}
+
+header.header-cache {
+    transform: translateY(-100%);
+}
+
+header.header-compacte {
+    transform: translateY(0);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+}
+
+header.header-compacte nav {
+    height: 52px;
+}
+
+#scroll-sentinelle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 80px;
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   12. RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 620px) {
+
+    /* Reset complet du nav pour mobile */
+    header {
+        padding: 0 !important;
+    }
+
+    nav {
+        display: grid !important;
+        grid-template-columns: 1fr auto !important;
+        grid-template-rows: auto auto !important;
+        height: auto !important;
+        padding: 0.65rem 1rem 0 !important;
+        gap: 0 !important;
+        max-width: 100% !important;
+    }
+
+    /* Logo : cellule haut-gauche */
+    .logo {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+        font-size: 1rem;
+    }
+
+    /* Bouton thème : cellule haut-droite */
+    .btn-theme {
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+        padding: 0.25rem 0.6rem;
+        font-size: 0.78rem;
+        align-self: center;
+    }
+
+    /* Menu : toute la largeur sur la 2e ligne */
+    nav ul {
+        grid-column: 1 / -1 !important;
+        grid-row: 2 !important;
+        display: flex !important;
+        flex-direction: row !important;
+        width: 100% !important;
+        gap: 0 !important;
+        padding: 0 !important;
+        margin-top: 0.5rem;
+        border-top: 1px solid rgba(255,255,255,0.12);
+        list-style: none;
+    }
+
+    nav ul li {
+        flex: 1 !important;
+        text-align: center;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 0.6rem 0.1rem;
+        font-size: 0.78rem;
+        border-radius: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    nav ul li.active a {
+        border-bottom: 2px solid var(--orange);
+        border-radius: 0;
+        background: rgba(255,255,255,0.06);
+        color: #fff;
+    }
+
+    main {
+        padding: 1.5rem 1rem;
+    }
+
+    .hero {
+        padding: 2rem 1.2rem;
+    }
+
+    .hero h1 {
+        font-size: 1.55rem;
+    }
+
+    .actions-accueil {
+        flex-direction: column;
+    }
+
+    .btn-action {
+        text-align: center;
+    }
+}
+/* ==========================================================================
+   13. PAGE PROJETS — SEMESTRES
+   ========================================================================== */
+
+#projets > p {
+    margin-bottom: 2rem;
+}
+
+.bloc-semestre {
+    margin-bottom: 2.5rem;
+}
+
+.titre-semestre {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--marine);
+    border-left: 3px solid var(--orange);
+    padding-left: 0.75rem;
+    margin-bottom: 1.2rem;
+}
+
+.carte-projet-header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    align-items: center;
+}
+
+.badge-code {
+    background: var(--marine);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 3px;
+    letter-spacing: 0.3px;
+    flex-shrink: 0;
+}
+
+.badge-competence {
+    color: var(--texte-d);
+    font-size: 0.78rem;
+    font-style: italic;
+}
+
+/* ==========================================================================
+   14. PAGE COMPÉTENCES — NOUVELLE VERSION
+   ========================================================================== */
+
+#competences > p {
+    margin-bottom: 1.8rem;
+}
+
+.conteneur-competences {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.bloc-pole {
+    background: var(--fond-card);
+    border-radius: 6px;
+    border: 1px solid var(--bordure);
+    border-left: 5px solid var(--marine);
+    padding: 1.8rem 2rem;
+}
+
+.bloc-pole--orange { border-left-color: var(--orange); }
+.bloc-pole--marine { border-left-color: var(--marine); }
+.bloc-pole--vert   { border-left-color: #3a7d44; }
+
+/* En-tête du pôle */
+.pole-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.9rem;
+}
+
+.pole-badge {
+    background: var(--marine);
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 0.25rem 0.65rem;
+    border-radius: 3px;
+    letter-spacing: 0.5px;
+    flex-shrink: 0;
+}
+
+.bloc-pole--orange .pole-badge { background: var(--orange); }
+.bloc-pole--vert   .pole-badge { background: #3a7d44; }
+
+.pole-header h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--marine);
+    margin: 0;
+}
+
+/* Tags SAÉ associées */
+.pole-saes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.3rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--bordure);
+}
+
+.tag-sae {
+    font-size: 0.75rem;
+    color: var(--texte-d);
+    background: #f0f2f5;
+    padding: 0.15rem 0.55rem;
+    border-radius: 3px;
+    font-style: italic;
+}
+
+/* Liste des compétences */
+.liste-competences {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.liste-competences li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.liste-competences li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--orange);
+    font-size: 0.8rem;
+    top: 0.15rem;
+}
+
+.bloc-pole--vert .liste-competences li::before { color: #3a7d44; }
+
+.comp-titre {
+    font-weight: 600;
+    font-size: 0.93rem;
+    color: var(--marine);
+}
+
+.comp-acquis {
+    font-size: 0.87rem;
+    color: var(--texte-d);
+    line-height: 1.5;
+}
+
+@media (max-width: 620px) {
+
+    /* Reset complet du nav pour mobile */
+    header {
+        padding: 0 !important;
+    }
+
+    nav {
+        display: grid !important;
+        grid-template-columns: 1fr auto !important;
+        grid-template-rows: auto auto !important;
+        height: auto !important;
+        padding: 0.65rem 1rem 0 !important;
+        gap: 0 !important;
+        max-width: 100% !important;
+    }
+
+    /* Logo : cellule haut-gauche */
+    .logo {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+        font-size: 1rem;
+    }
+
+    /* Bouton thème : cellule haut-droite */
+    .btn-theme {
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+        padding: 0.25rem 0.6rem;
+        font-size: 0.78rem;
+        align-self: center;
+    }
+
+    /* Menu : toute la largeur sur la 2e ligne */
+    nav ul {
+        grid-column: 1 / -1 !important;
+        grid-row: 2 !important;
+        display: flex !important;
+        flex-direction: row !important;
+        width: 100% !important;
+        gap: 0 !important;
+        padding: 0 !important;
+        margin-top: 0.5rem;
+        border-top: 1px solid rgba(255,255,255,0.12);
+        list-style: none;
+    }
+
+    nav ul li {
+        flex: 1 !important;
+        text-align: center;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 0.6rem 0.1rem;
+        font-size: 0.78rem;
+        border-radius: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    nav ul li.active a {
+        border-bottom: 2px solid var(--orange);
+        border-radius: 0;
+        background: rgba(255,255,255,0.06);
+        color: #fff;
+    }
+
+    main {
+        padding: 1.5rem 1rem;
+    }
+
+    .hero {
+        padding: 2rem 1.2rem;
+    }
+
+    .hero h1 {
+        font-size: 1.55rem;
+    }
+
+    .actions-accueil {
+        flex-direction: column;
+    }
+
+    .btn-action {
+        text-align: center;
+    }
+}
+
+/* ==========================================================================
+   15. MODE SOMBRE — BOUTON TOGGLE & AJUSTEMENTS
+   ========================================================================== */
+
+/* Bouton toggle dans la navbar */
+.btn-theme {
+    background: none;
+    border: none;
+    color: #c8d4e0;
+    padding: 0.3rem 0.4rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.btn-theme:hover {
+    opacity: 0.8;
+    transform: scale(1.15);
+}
+
+.btn-theme .theme-label { display: none; }
+.btn-theme .theme-icon { font-size: 1.2rem; }
+
+/* Corrections dark mode sur éléments qui ont des couleurs hardcodées */
+[data-theme="dark"] .hero {
+    background-color: #0f0f0f;
+}
+
+[data-theme="dark"] .badge-dispo {
+    color: #86efac;
+    border-color: rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.04);
+}
+
+[data-theme="dark"] .bloc-cta {
+    background-color: #0f0f0f;
+    border: 1px solid var(--bordure);
+}
+
+[data-theme="dark"] .stack-tags span,
+[data-theme="dark"] .technos li {
+    background: #1a1a1a;
+    color: var(--marine);
+    border: 1px solid #2a2a2a;
+}
+
+[data-theme="dark"] nav ul li.active a {
+    background: rgba(245, 158, 11, 0.12);
+}
+
+[data-theme="dark"] .tag-sae {
+    background: #1a1a1a;
+    color: var(--texte-d);
+    border: 1px solid #2a2a2a;
+}
+
+[data-theme="dark"] footer {
+    background-color: #050505;
+    border-top-color: var(--orange);
+}
+
+[data-theme="dark"] .form-groupe input,
+[data-theme="dark"] .form-groupe textarea {
+    background: #161616;
+    color: var(--texte);
+    border-color: #2a2a2a;
+}
+
+[data-theme="dark"] .form-groupe input:focus,
+[data-theme="dark"] .form-groupe textarea:focus {
+    border-color: var(--marine);
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+}
+
+[data-theme="dark"] .form-groupe input::placeholder,
+[data-theme="dark"] .form-groupe textarea::placeholder {
+    color: #444;
+}
+
+[data-theme="dark"] .contact-dispo {
+    background: #111;
+    border-color: #2a2a2a;
+}
+
+[data-theme="dark"] .bloc-pole--vert {
+    border-left-color: #34d399;
+}
+
+[data-theme="dark"] .bloc-pole--vert .pole-badge {
+    background: #34d399;
+    color: #000;
+}
+
+[data-theme="dark"] .bloc-pole--vert .liste-competences li::before {
+    color: #34d399;
+}
+
+[data-theme="dark"] header {
+    background-color: #050505;
+    border-bottom: 1px solid #1a1a1a;
+}
+
+/* Transition sur tous les éléments clés */
+.bloc-pole, .carte-projet, .presentation,
+.form-contact, .bloc-bio, .chiffre-item,
+.bloc-stack, .bloc-cta, .alerte, footer, main {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* ==========================================================================
+   16. PAGE CONTACT — LAYOUT DEUX COLONNES
+   ========================================================================== */
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    align-items: start;
+}
+
+.contact-infos {
+    background: var(--fond-card);
+    border: 1px solid var(--bordure);
+    border-radius: 6px;
+    padding: 1.8rem;
+    border-top: 3px solid var(--orange);
+}
+
+.contact-infos h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--marine);
+    margin-bottom: 0.6rem;
+}
+
+.contact-infos > p {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.liste-contact {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.liste-contact li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+}
+
+.contact-icon {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+}
+
+.liste-contact div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.contact-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--texte-d);
+}
+
+.contact-valeur {
+    font-size: 0.9rem;
+    color: var(--marine);
+    text-decoration: none;
+    font-weight: 500;
+    word-break: break-all;
+    transition: color 0.2s;
+}
+
+.contact-valeur:hover {
+    color: var(--orange);
+}
+
+.contact-dispo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    color: var(--texte-d);
+    background: var(--blanc);
+    border: 1px solid var(--bordure);
+    border-radius: 4px;
+    padding: 0.6rem 0.8rem;
+}
+
+.contact-formulaire .form-contact {
+    margin-top: 0;
+}
+
+@media (max-width: 700px) {
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================================
+   17. CONTACT — ENRICHISSEMENT PANNEAU INFOS
+   ========================================================================== */
+
+.contact-detail {
+    font-size: 0.78rem;
+    color: var(--texte-d);
+    font-style: italic;
+}
+
+.contact-disponibilites {
+    margin-top: 1.5rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--bordure);
+}
+
+.contact-disponibilites h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--texte-d);
+    margin-bottom: 0.8rem;
+}
+
+.contact-disponibilites ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+}
+
+.contact-disponibilites li {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.88rem;
+    color: var(--texte-d);
+}
+
+.contact-disponibilites .point-vert {
+    width: 7px;
+    height: 7px;
+    flex-shrink: 0;
+}
+
+.btn-dl-cv {
+    display: inline-block;
+    margin-top: 1.5rem;
+    background-color: var(--marine);
+    font-size: 0.88rem;
+    padding: 0.55rem 1.1rem;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.btn-dl-cv:hover {
+    background-color: var(--marine-m);
+}
+
+/* ==========================================================================
+   18. CARTE PROJET — BOUTON RAPPORT
+   ========================================================================== */
+
+.btn-rapport {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.45rem 1rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--marine);
+    border: 1.5px solid var(--marine);
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-rapport:hover {
+    background-color: var(--marine);
+    color: #fff;
+}
+
+/* Fichiers multiples sur une carte projet */
+.carte-fichiers {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.carte-fichiers .btn-rapport {
+    margin-top: 0;
+}
+
+/* Carte unique dans la grille : prend toute la largeur */
+.grille-projets .carte-projet:only-child {
+    flex: 1 1 100%;
+    max-width: 100%;
+}
