@@ -28,6 +28,9 @@
                 <li class="<?php echo ($page === 'accueil') ? 'active' : ''; ?>">
                     <a href="index.php?page=accueil">Accueil</a>
                 </li>
+                <li class="<?php echo ($page === 'presentation') ? 'active' : ''; ?>">
+                    <a href="index.php?page=presentation">Présentation</a>
+                </li>
                 <li class="<?php echo ($page === 'competences') ? 'active' : ''; ?>">
                     <a href="index.php?page=competences">Compétences</a>
                 </li>
@@ -37,6 +40,7 @@
                 <li class="<?php echo ($page === 'contact') ? 'active' : ''; ?>">
                     <a href="index.php?page=contact">Contact</a>
                 </li>
+
             </ul>
 
             <button class="btn-theme" id="btn-theme" aria-label="Changer de thème">

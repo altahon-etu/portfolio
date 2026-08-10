@@ -5,10 +5,10 @@
         <div class="hero-contenu">
             <p class="hero-tag"> Bonjour, moi c'est</p>
             <h1>Alexis Tahon</h1>
-            <p class="sous-titre">Étudiant en BUT Réseaux & Télécommunications à l'IUT de Blois —<br>passionné par les infrastructures, la cybersécurité et les systèmes Linux.</p>
+            <p class="sous-titre">Étudiant en BUT Réseaux & Télécommunications à l'IUT de Blois <br>passionné par les infrastructures, la cybersécurité et les systèmes Linux.</p>
             <div class="actions-accueil">
                 <a href="index.php?page=projets" class="btn-action">Voir mes projets</a>
-                <a href="fichiers/CV_Alexis_TAHON.pdf" class="btn-action btn-cv" download>Télécharger mon CV</a>
+                <a href="../fichiers/CV_Alexis_TAHON.pdf" class="btn-action btn-cv" download>Télécharger mon CV</a>
             </div>
         </div>
         <div class="hero-badge">
