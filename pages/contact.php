@@ -124,7 +124,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <label for="nom">Nom / Prénom <span style="color:var(--orange)">*</span></label>
             <input type="text" id="nom" name="nom"
                    value="<?php echo htmlspecialchars($nom); ?>"
-                   placeholder="Alexis Dupont"
+                   placeholder="Alexis TAHON"
                    required>
         </div>
 

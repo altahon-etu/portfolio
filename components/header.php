@@ -22,7 +22,7 @@
 
     <header id="header-principal">
         <nav>
-            <div class="logo">Alexis <span>Tahon</span></div>
+            <a href="index.php?page=accueil" class="logo">Alexis <span>Tahon</span></a>
 
             <ul id="nav-menu">
                 <li class="<?php echo ($page === 'accueil') ? 'active' : ''; ?>">
@@ -46,6 +46,10 @@
             <button class="btn-theme" id="btn-theme" aria-label="Changer de thème">
                 <span class="theme-icon">🌙</span>
                 <span class="theme-label">Sombre</span>
+            </button>
+
+            <button class="btn-menu" id="btn-menu" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu">
+                <span class="menu-icon">☰</span>
             </button>
         </nav>
     </header>
@@ -75,6 +79,38 @@
                 appliquerTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
             });
 
+            /* ── Menu mobile (hamburger) ── */
+            var btnMenu = document.getElementById('btn-menu');
+            var navMenu = document.getElementById('nav-menu');
+
+            if (btnMenu && navMenu) {
+                var icone = btnMenu.querySelector('.menu-icon');
+
+                function fermerMenu() {
+                    navMenu.classList.remove('menu-ouvert');
+                    btnMenu.setAttribute('aria-expanded', 'false');
+                    icone.textContent = '☰';
+                }
+
+                function basculerMenu() {
+                    var ouvert = navMenu.classList.toggle('menu-ouvert');
+                    btnMenu.setAttribute('aria-expanded', ouvert ? 'true' : 'false');
+                    icone.textContent = ouvert ? '✕' : '☰';
+                }
+
+                btnMenu.addEventListener('click', basculerMenu);
+
+                /* Ferme le menu après avoir choisi un lien */
+                navMenu.querySelectorAll('a').forEach(function (lien) {
+                    lien.addEventListener('click', fermerMenu);
+                });
+
+                /* Ferme le menu si on repasse en affichage large (rotation, redimensionnement) */
+                window.addEventListener('resize', function () {
+                    if (window.innerWidth > 620) fermerMenu();
+                });
+            }
+
             /* ── Hide on scroll ── */
             var header     = document.getElementById('header-principal');
             var sentinelle = document.getElementById('scroll-sentinelle');
@@ -91,6 +127,7 @@
             var ticking = false;
             window.addEventListener('scroll', function() {
                 if (ticking) return;
+                if (navMenu && navMenu.classList.contains('menu-ouvert')) return;
                 window.requestAnimationFrame(function() {
                     var pos = window.scrollY || window.pageYOffset || 0;
                     if (pos <= 10) {

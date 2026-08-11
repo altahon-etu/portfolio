@@ -100,15 +100,15 @@
             <h2>expériences</h2>
             <ul class="liste-pres">
                 <li>
-                    <span class="pres-titre">Stage découverte — Plée Constructions</span>
-                    <span class="pres-detail">2022 · Une semaine passée sur trois pôles : développement web,
+                    <span class="pres-titre">Stage découverte — Apivia-Courtage</span>
+                    <span class="pres-detail">2022 · Une semaine passée sur quatre pôles : développement web,
                     utilisation de Talend au pôle EDI, de BelAir au pôle statistiques, et configuration de postes
                     au pôle infrastructure.</span>
                 </li>
                 <li>
-                    <span class="pres-titre">Stage découverte — Apivia-Courtage</span>
+                    <span class="pres-titre">Stage découverte — Plée Constructions</span>
                     <span class="pres-detail">2022 · Découverte du fonctionnement d'une entreprise du secteur
-                    de l'assurance.</span>
+                    du BTP.</span>
                 </li>
             </ul>
         </div>
