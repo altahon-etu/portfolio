@@ -20,7 +20,7 @@ $semestres = [
             'code'        => 'SAÉ 1.03',
             'titre'       => 'Découvrir un dispositif de transmission',
             'competence'  => 'UE2 — Connecter les entreprises et les usagers',
-            'description' => 'Manipulation en salle de TP des appareils de mesure électronique : oscilloscope numérique, générateur basse fréquence (GBF) et analyseur de spectre. Étude des signaux analogiques et numériques, analyse des modulations (AM, FM) et mesure de la qualité du signal sur différents supports de transmission. Rédaction d\'un compte-rendu de TP.',
+            'description' => 'Manipulation en salle de TP des appareils de mesure électronique : oscilloscope numérique, générateur basse fréquence (GBF) et analyseur de spectre. Étude des signaux analogiques et numériques et mesure de la qualité du signal sur différents supports de transmission. Rédaction d\'un compte-rendu de TP.',
             'technos'     => ['Oscilloscope', 'GBF', 'Modulations', 'Signaux'],
         ],
         [
@@ -35,7 +35,7 @@ $semestres = [
             'titre'       => 'Traiter des données',
             'competence'  => 'UE3 — Créer des outils et applications informatiques pour les R&T',
             'description' => 'Extraction et traitement automatisé de fichiers de logs système à l\'aide de scripts Python. Parsing de fichiers texte brut, nettoyage des données, agrégation statistique et génération de tableaux de bord lisibles. Application des notions d\'algorithmique et de programmation structurée vues en cours.',
-            'technos'     => ['Python', 'Scripts', 'Logs', 'Traitement de données'],
+            'technos'     => ['Python', 'Scripts', 'Logs', 'Traitement de données', 'Tableaux de bord', 'Parsing'],
         ],
     ],
 
@@ -44,7 +44,8 @@ $semestres = [
             'code'        => 'SAÉ 2.01',
             'titre'       => 'Construire un réseau informatique pour une petite structure',
             'competence'  => 'UE1 & UE2 — Administrer / Connecter',
-            'description' => 'Conception et déploiement complet de l\'infrastructure réseau d\'une TPE et de deux PME fictives. Modélisation de la topologie, découpage en VLANs, configuration du routage inter-VLAN sur équipements Cisco, et déploiement des services fondamentaux (DHCP, DNS, SSH). Respect d\'un cahier des charges technique et rédaction d\'un rapport détaillé.',            'technos'     => ['Cisco Packet Tracer', 'VLANs', 'OSPF', 'NAT', 'DHCP', 'DNS', 'ACL', 'IPv4/IPv6', 'Port Forwarding', 'FTP'],
+            'description' => 'Conception et déploiement complet de l\'infrastructure réseau d\'une TPE et de deux PME fictives. Modélisation de la topologie, découpage en VLANs, configuration du routage inter-VLAN sur équipements Cisco, et déploiement des services fondamentaux (DHCP, DNS, SSH). Respect d\'un cahier des charges technique et rédaction d\'un rapport détaillé.',            
+            'technos'     => ['Cisco Packet Tracer', 'VLANs', 'OSPF', 'NAT', 'DHCP', 'DNS', 'ACL', 'IPv4/IPv6', 'Port Forwarding', 'FTP'],
             'fichiers'    => [
                 ['nom' => 'Rapport de projet', 'url' => 'fichiers/Rapport_SAE_201_TAHON_Alexis.pdf'],
                 ['nom' => 'Fichier Packet Tracer (.pkt)', 'url' => 'fichiers/SAE201.pkt'],
@@ -55,14 +56,14 @@ $semestres = [
             'titre'       => 'Mettre en place une solution informatique pour l\'entreprise',
             'competence'  => 'UE3 — Créer des outils et applications informatiques pour les R&T',
             'description' => 'Projet en binôme en deux livrables. Livrable 1 : modélisation d\'une base de données relationnelle sous Oracle Database à partir de jeux de données Open Data de la région Centre-Val de Loire. Conception du Modèle Logique de Données, normalisation, peuplement des tables et écriture de requêtes SQL diversifiées (jointures, groupements, LIKE). Livrable 2 : développement d\'un site web PHP/Bootstrap connecté à cette base de données, avec pages de visualisation (tableaux, graphiques Chart.js), formulaire de filtrage avec requêtes préparées, et gestion des sessions utilisateurs (authentification, droits admin/ext).',
-            'technos'     => ['Oracle DB', 'SQL', 'PHP', 'Bootstrap', 'Chart.js', 'Sessions', 'Open Data'],
+            'technos'     => ['Oracle DB', 'SQL', 'PHP', 'Bootstrap', 'Chart.js', 'Sessions', 'Open Data', 'Requêtes préparées', 'Modèle Logique de Données', 'Normalisation'],
         ],
         [
             'code'        => 'SAÉ 2.04',
             'titre'       => 'ArchiNet — Déploiement d\'un réseau télécom sur un archipel',
             'competence'  => 'UE1 & UE2 — Administrer / Connecter les entreprises et les usagers',
             'description' => 'Projet en binôme (et coordination groupe TP) visant à concevoir un réseau télécom complet pour desservir des villages répartis sur une île d\'un archipel fictif. L\'île 8 est modélisée sur une grille hexagonale (1 hex = 1 km) avec quatre villages : hex 8.044 (110 foyers), hex 8.054 (132 foyers), hex 8.019 (86 foyers) et 8.018 (55 foyers). Travail en plusieurs phases : analyse du territoire (terrains, distances, obstacles radio), dimensionnement des besoins en débit (5 Mbit/s par foyer), choix technologiques justifiés (FTTH, radio PTP ou FWA), bilans de liaison fibre et radio, estimation du budget en Crédits (400 Cr/foyer pour l\'archipel). Livrables : livrable intermédiaire (tableau des villages + 1er budget), rapport technique final (schémas, bilans, tableau des coûts), et soutenance collective d\'arbitrage budgétaire à l\'échelle de l\'archipel.',
-            'technos'     => ['FTTH / OLT / ONT', 'Radio PTP', 'FWA', 'Bilan de liaison', 'Budget Crédits', 'Python / Octave'],
+            'technos'     => ['FTTH / OLT / ONT', 'Radio PTP', 'FWA', 'Bilan de liaison', 'Budget Crédits', 'Python', 'Analyse géographique', 'Grille hexagonale'],
             'fichiers'    => [
                 ['nom' => 'Rapport de projet', 'url' => 'fichiers/Compte_Rendu_SAE_204.pdf'],
             ],

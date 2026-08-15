@@ -25,7 +25,7 @@
         <div class="bloc-bio">
             <h2>Qui suis-je ?</h2>
             <p>
-                J'ai 18 ans, je vis à Blois et je suis en première année de <strong>BUT R&T</strong>.
+                J'ai 19 ans, je vis à Blois et je suis en première année de <strong>BUT R&T</strong>.
                 Avant ça, j'ai eu le bac mention assez bien au lycée Descartes de Tours, avec les spécialités
                 Maths, Physique-Chimie et NSI — c'est là que l'informatique m'a vraiment accroché.
             </p>
