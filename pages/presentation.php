@@ -131,7 +131,7 @@
 
     <!-- ===================== CTA FINAL ===================== -->
     <div class="bloc-cta">
-        <p>Envie d'en discuter ou de voir mes projets techniques ?</p>
+        <p>Envie d'en discuter ou de voir mes projets techniques&nbsp;?</p>
         <div class="actions-accueil">
             <a href="index.php?page=projets" class="btn-action btn-cv">Voir mes projets</a>
             <a href="index.php?page=contact" class="btn-action">Me contacter</a>

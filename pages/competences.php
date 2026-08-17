@@ -175,7 +175,7 @@ $poles = [
 
     <!-- ===================== CTA CERTIFICATIONS ===================== -->
     <div class="bloc-cta">
-        <p>Envie de voir les <strong>certificats et attestations</strong> obtenus au cours de ma formation ?</p>
+        <p>Envie de voir les <strong>certificats et attestations</strong> obtenus au cours de ma formation&nbsp;?</p>
         <div class="actions-accueil">
             <a href="index.php?page=certifications" class="btn-action">Voir mes certifications</a>
         </div>
