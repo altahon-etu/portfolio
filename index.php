@@ -1,6 +1,6 @@
 <?php
 // 1. On définit les pages autorisées (Sécurité / Whitelisting)
-$pages_autorisees = ['accueil', 'presentation', 'competences', 'projets', 'contact'];
+$pages_autorisees = ['accueil', 'presentation', 'competences', 'projets', 'contact', 'certifications'];
 
 // 2. On récupère la page demandée, par défaut c'est l'accueil
 $page = isset($_GET['page']) ? $_GET['page'] : 'accueil';

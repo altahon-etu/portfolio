@@ -3,3 +3,9 @@ RewriteCond %{SERVER_PORT} 80
 RewriteRule ^(.*)$ https://alexis-tahon.fr/$1 [R,L]
 
 AddType application/octet-stream .pkt
+
+SetEnvIfNoCase User-Agent "BadBot|SpamCrawler" bad_bot
+
+Order Allow,Deny
+Allow from all
+Deny from env=bad_bot   
