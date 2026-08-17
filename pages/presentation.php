@@ -119,10 +119,12 @@
                 <li>
                     <span class="pres-titre">CCNA 1 — Introduction aux réseaux</span>
                     <span class="pres-detail">Cisco Networking Academy</span>
+                    <a href="fichiers/certif_ccna1.pdf" class="btn-rapport" download>Télécharger le certificat</a>
                 </li>
                 <li>
                     <span class="pres-titre">MOOC SecNumacad</span>
                     <span class="pres-detail">ANSSI — hygiène numérique et sensibilisation à la cybersécurité</span>
+                    <a href="fichiers/certif_secnumacad.pdf" class="btn-rapport" download>Télécharger le certificat</a>
                 </li>
             </ul>
         </div>
